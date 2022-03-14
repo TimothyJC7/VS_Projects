@@ -5,10 +5,8 @@
 #include "company.h"
 
 std::fstream Company::user_db;
-int Company::login;
 
 void Company::registerUser(const std::string& un,const std::string& p) {
-	login = 0;
 	user_db.open("user_db.txt", std::ios::in || std::ios::app);
 	fileFailCheck(user_db);
 	if (!userExists(un)) {
@@ -19,7 +17,6 @@ void Company::registerUser(const std::string& un,const std::string& p) {
 	user_db.close();
 }
 void Company::loginUser(const std::string& un, const std::string& p) {
-	login = 1;
 	user_db.open("user_db.txt", std::ios::in || std::ios::app);
 	fileFailCheck(user_db);
 	if (Company::user_db.eof()) std::cout << "\nUser doesn't Exist\n" << std::endl;
