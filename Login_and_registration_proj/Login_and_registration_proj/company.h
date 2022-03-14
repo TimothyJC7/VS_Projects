@@ -5,7 +5,6 @@
 
 class Company {
 private:
-	static int login;
 	static std::fstream user_db;
 public:
 	Company() = delete;
